@@ -47,8 +47,8 @@ export class RendererContext {
     /** Initialized the `RendererContext`
      * * Should be disposed with `this.dispose()`
      */
-    init = async () => {
-        this.#browser = await puppeteer.launch();
+    init = async (args?: string[]) => {
+        this.#browser = await puppeteer.launch({ args: args ?? []});
     }
 
     /** Renders every entry to corresponsing output
